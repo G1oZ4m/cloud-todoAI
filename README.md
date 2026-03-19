@@ -105,6 +105,13 @@ AI pełni rolę wsparcia, natomiast wszystkie decyzje i implementacja są weryfi
 
 ---
 
+<img width="1221" height="571" alt="image" src="https://github.com/user-attachments/assets/265852b7-820c-4a4a-9096-ab60f51e0216" />
+
+Diagram przedstawia architekturę mikroserwisową.
+Frontend komunikuje się z Booking Service.
+Booking Service współpracuje z innymi serwisami oraz bazą danych.
+Każdy serwis posiada własną bazę danych, co zapewnia skalowalność systemu.
+
 ## 📅 Postęp prac
 
 ### Tydzień 1

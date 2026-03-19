@@ -1,96 +1,63 @@
-Rezerwacja Wizyty (Mikroserwisy)
+# Cloud Booking System (Mikroserwisy)
 
+## 📌 Opis projektu
 
-📌 Opis projektu
-Projekt polega na stworzeniu aplikacji chmurowej do zarządzania zadaniami (To-Do) w architekturze mikroserwisowej.
-Aplikacja wykorzystuje sztuczną inteligencję do sugerowania priorytetu oraz kategorii zadań.
+Projekt polega na stworzeniu aplikacji chmurowej umożliwiającej rezerwację wizyt online.
+Użytkownicy mogą przeglądać dostępne usługi, wybierać dogodny termin oraz zarządzać swoimi rezerwacjami.
 
-🧱 Architektura
-System składa się z kilku mikroserwisów:
-Task Service – zarządzanie zadaniami (CRUD)
-User Service – rejestracja i logowanie użytkowników
-AI Service – generowanie priorytetu i kategorii zadań (OpenAI)
-
-🛠 Stos technologiczny
-Backend: Java (Spring Boot)
-Frontend: React (lub proste HTML + JavaScript)
-Baza danych: PostgreSQL (Railway)
-AI: OpenAI API
-DevOps: Docker, Docker Compose
-Chmura: Railway
-
-👥 Zespół
-Stanislav Shary – Frontend
-Oleksandr Nechyporenko  – Task Service
-Vladyslav  Khanchych  – User Service + AI Service
-
-🎯 Cel projektu
-Celem projektu jest stworzenie skalowalnej aplikacji chmurowej z wykorzystaniem architektury mikroserwisowej oraz integracji AI.
-
-⚙️ Konfiguracja środowiska
-W projekcie wykorzystano następujące narzędzia i środowisko:
-IDE: Visual Studio Code / IntelliJ IDEA
-System kontroli wersji: Git + GitHub
-Backend: Java (Spring Boot)
-Konteneryzacja: Docker
-Baza danych: PostgreSQL (Railway)
-
-🤖 Narzędzia AI
-W trakcie realizacji projektu wykorzystujemy narzędzia sztucznej inteligencji:
-GitHub Copilot – do generowania kodu i sugestii
-ChatGPT – do wsparcia w projektowaniu architektury oraz debugowaniu
-OpenAI API – planowane wykorzystanie w dalszych etapach projektu
-AI wspomaga proces tworzenia aplikacji, jednak kod jest weryfikowany i poprawiany przez członków zespołu.
-
-## 🧱 Architektura systemu
-
-Aplikacja została zaprojektowana w architekturze mikroserwisowej.
-Każdy mikroserwis odpowiada za określoną funkcjonalność i działa niezależnie.
-
-### Komponenty systemu:
-
-* Frontend – interfejs użytkownika (React lub HTML + JavaScript)
-* Booking Service – zarządzanie rezerwacjami wizyt
-* User Service – obsługa użytkowników (rejestracja i logowanie)
-* Service Catalog – zarządzanie listą dostępnych usług
-
-Komunikacja między serwisami odbywa się za pomocą REST API.
+Aplikacja została zaprojektowana w architekturze mikroserwisowej, co pozwala na łatwą skalowalność, modularność oraz niezależny rozwój poszczególnych komponentów systemu.
 
 ---
 
-## 📦 Modele danych
+## 🎯 Cel projektu
+
+Celem projektu jest stworzenie nowoczesnej aplikacji chmurowej wykorzystującej architekturę mikroserwisową oraz narzędzia wspomagające proces programowania.
+
+Projekt ma na celu:
+
+* zrozumienie działania mikroserwisów
+* naukę pracy z technologiami chmurowymi
+* implementację REST API
+* rozwój umiejętności pracy zespołowej
+
+---
+
+## 🧱 Architektura systemu
+
+System składa się z kilku niezależnych mikroserwisów:
+
+* **Frontend** – interfejs użytkownika (React lub HTML + JavaScript)
+* **Booking Service** – zarządzanie rezerwacjami wizyt
+* **User Service** – rejestracja i logowanie użytkowników
+* **Service Catalog** – lista dostępnych usług
+
+Każdy mikroserwis posiada własną logikę biznesową i komunikuje się poprzez REST API.
+
+System jest przygotowany do wdrożenia w środowisku chmurowym (Railway).
+
+---
+
+## 📊 Model danych
 
 ### Booking
 
-```json
-{
-  "id": 1,
-  "userId": 2,
-  "serviceId": 3,
-  "date": "2026-03-20",
-  "time": "14:00"
-}
-```
+* id
+* userId
+* serviceId
+* date
+* time
 
 ### User
 
-```json
-{
-  "id": 1,
-  "email": "user@test.com",
-  "password": "hashed_password"
-}
-```
+* id
+* email
+* password
 
 ### Service
 
-```json
-{
-  "id": 1,
-  "name": "Strzyżenie",
-  "duration": 30
-}
-```
+* id
+* name
+* duration
 
 ---
 
@@ -98,9 +65,9 @@ Komunikacja między serwisami odbywa się za pomocą REST API.
 
 ### Booking Service
 
-* GET /bookings – pobranie wszystkich rezerwacji
+* GET /bookings – pobranie listy rezerwacji
 * POST /bookings – utworzenie nowej rezerwacji
-* DELETE /bookings/{id} – usunięcie rezerwacji
+* GET /bookings/health – sprawdzenie działania serwisu
 
 ### User Service
 
@@ -114,14 +81,76 @@ Komunikacja między serwisami odbywa się za pomocą REST API.
 
 ---
 
+## ⚙️ Stos technologiczny
 
-## 📊 Opis rozwiązania
+* Backend: Java (Spring Boot)
+* Frontend: React / HTML + JavaScript
+* Baza danych: PostgreSQL
+* DevOps: Docker
+* Chmura: Railway
+* Narzędzia AI: ChatGPT, GitHub Copilot
 
-System został zaprojektowany w sposób skalowalny i modułowy.
-Każdy mikroserwis posiada własną logikę biznesową i może być rozwijany niezależnie.
+---
 
-Architektura umożliwia łatwe wdrożenie aplikacji w środowisku chmurowym (Railway).
+## 🤖 Wykorzystanie AI
 
-<img width="472" height="405" alt="image" src="https://github.com/user-attachments/assets/feb256e5-5fbc-4567-a11b-fdb1c227385f" />
+W projekcie wykorzystano narzędzia sztucznej inteligencji do:
 
+* generowania fragmentów kodu
+* wspomagania projektowania architektury
+* debugowania aplikacji
+* optymalizacji rozwiązań
 
+AI pełni rolę wsparcia, natomiast wszystkie decyzje i implementacja są weryfikowane przez zespół.
+
+---
+
+## 📅 Postęp prac
+
+### Tydzień 1
+
+* wybór tematu projektu
+* utworzenie repozytorium GitHub
+* przygotowanie dokumentacji (README)
+* konfiguracja środowiska oraz narzędzi AI
+
+### Tydzień 2
+
+* zaprojektowanie architektury mikroserwisowej
+* przygotowanie modeli danych
+* definicja endpointów REST
+* stworzenie diagramu systemu
+
+### Tydzień 3
+
+* utworzenie pierwszego mikroserwisu (Booking Service)
+* implementacja podstawowych endpointów REST
+* dodanie endpointu health-check
+* uruchomienie aplikacji lokalnie
+
+---
+
+## 👥 Zespół
+
+* **Stanislav Shary** – Frontend
+* **Oleksandr Nechyporenko** – Booking Service
+* **Vladyslav Khanchych** – User Service + AI Service
+
+---
+
+## 🔒 Bezpieczeństwo (planowane)
+
+* autoryzacja użytkowników (JWT)
+* walidacja danych wejściowych
+
+---
+
+## 🚀 Plany rozwoju
+
+W kolejnych etapach projektu planowane jest:
+
+* integracja z bazą danych PostgreSQL
+* implementacja pełnego CRUD
+* dodanie autoryzacji użytkowników
+* wdrożenie aplikacji w chmurze (Railway)
+* konfiguracja CI/CD
